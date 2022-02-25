@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <meta charset="UTF-8">
+        <meta name="description" content="Free Web tutorials">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Harshitha">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="pass_check.js"></script>
+        <style>
+            form i {
+                margin-left: -30px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><h3>KOHLI MEDIA LLP</h3></li>
+                <li><a href="login.html"><h4>Login</h4></a></li>
+            </ul>
+        </header>
+        <br>
+        <br>
+        <br>
+        <h1 class="glow">REGISTER</h1>
+        
+        
+        <form onsubmit="return(validate()); " name = "myForm">
+            
+                <div class="input-container">
+                    <i class="fa fa-user icon"></i>
+                    <input class="input-field" type="text" placeholder="Username" name="usrnm" id="user">
+                  </div>
+
+                  <div class="input-container">
+                    <i class="fa fa-calendar icon"></i>
+                    <input class="input-field" type="date" placeholder="Date Of Birth" name="dob" id="dob">
+                  </div>
+
+                  <div class="input-container">
+                    <i class="fa fa-phone icon"></i>
+                    <input class="input-field" type="tel" placeholder="Contact" name="contact" id="phone" maxlength="10">
+                  </div>
+                
+                  <div class="input-container">
+                    <i class="fa fa-envelope icon"></i>
+                    <input class="input-field" type="email" placeholder="Email" name="email" id="email">
+                  </div>
+                
+                  <div class="input-container">
+                    <i class="fa fa-key icon"></i>
+                    <input class="input-field" type="password" placeholder="Password" name="psw" id="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                    
+                </div>
+                
+
+                  <div class="input-container">
+                    <i class="fa fa-eye icon"></i>
+                    <input class="input-field" type="password" placeholder="Confirm Password" name="cpsw" id="cpsw">
+                  </div>
+                  
+                  <input type="submit" id="btnCheck" value="REGISTER" class="btn">
+                  <br>
+                  <div id="message">
+                    <h3>Password must contain the following:</h3>
+                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                    <p id="number" class="invalid">A <b>number</b></p>
+                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                  </div>
+                  <span><h6>Already have account?<a href="login.html">Login</a></h6></span>
+                  
+                 
+               
+                  
+            
+        </form>
+        <img src="pic-removebg-preview.png" >
+        <script>
+            var myInput = document.getElementById("psw");
+            var letter = document.getElementById("letter");
+            var capital = document.getElementById("capital");
+            var number = document.getElementById("number");
+            var length = document.getElementById("length");
+            
+            // When the user clicks on the password field, show the message box
+            myInput.onfocus = function() {
+              document.getElementById("message").style.display = "block";
+            }
+            
+            // When the user clicks outside of the password field, hide the message box
+            myInput.onblur = function() {
+              document.getElementById("message").style.display = "none";
+            }
+            
+            // When the user starts to type something inside the password field
+            myInput.onkeyup = function() {
+              // Validate lowercase letters
+              var lowerCaseLetters = /[a-z]/g;
+              if(myInput.value.match(lowerCaseLetters)) {  
+                letter.classList.remove("invalid");
+                letter.classList.add("valid");
+              } else {
+                letter.classList.remove("valid");
+                letter.classList.add("invalid");
+              }
+              
+              // Validate capital letters
+              var upperCaseLetters = /[A-Z]/g;
+              if(myInput.value.match(upperCaseLetters)) {  
+                capital.classList.remove("invalid");
+                capital.classList.add("valid");
+              } else {
+                capital.classList.remove("valid");
+                capital.classList.add("invalid");
+              }
+            
+              // Validate numbers
+              var numbers = /[0-9]/g;
+              if(myInput.value.match(numbers)) {  
+                number.classList.remove("invalid");
+                number.classList.add("valid");
+              } else {
+                number.classList.remove("valid");
+                number.classList.add("invalid");
+              }
+              
+              // Validate length
+              if(myInput.value.length >= 8) {
+                length.classList.remove("invalid");
+                length.classList.add("valid");
+              } else {
+                length.classList.remove("valid");
+                length.classList.add("invalid");
+              }
+            }
+            </script>
+            <br><br>
+            <footer>
+                <table>
+                    <tr>
+                        <td>
+                            <b><u>About:</u></b><br>
+                    Kohli Company founded in 2006 is a group <br>of businesses, that develop innovative<br> Web-Products serving people worldwide, is <br>now Kohli Media LLP - an Indian Limited<br> Liability Partnership.
+                </td>
+                <td>
+                    <u>Quick Links:</u><br><br>
+                    <a href="sigup.html"><b>Register</b></a><br>
+                    <a href="login.html"><b>Login</b></a>
+                </td><td>
+                    <b><u>Address:</u></b><br>
+                    Kohli Media LLP.<br>
+                   SCO 31, Sector 86<br> 
+                   Mohali - 160062, India.<br><br>
+                   <a href="https://www.facebook.com/KohliCompany" class="fa fa-facebook"></a>
+                    <a href="https://twitter.com/KohliCompany" class="fa fa-twitter"></a>
+    
+                   <a href="https://www.linkedin.com/company/kohlicompany/" class="fa fa-linkedin"></a>
+    
+                      <a href="https://www.instagram.com/KohliCompany/" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </td>
+            </tr>
+            </table>
+            </footer> 
+    </body>
+</html>

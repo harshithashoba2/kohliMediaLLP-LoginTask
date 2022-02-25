@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forgot Password</title>
+        <script src="pass_check.js"></script>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <meta charset="UTF-8">
+        <meta name="description" content="Free Web tutorials">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Harshitha">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+        <style>
+            form i {
+                margin-left: -30px;
+                cursor: pointer;
+            }
+            form{
+                border-bottom: 8px ridge;
+            }
+        </style>
+        <script>
+            function login()
+{
+                pass=document.myForm.psw.value;
+                     cpass=document.myForm.cpsw.value;
+        
+        if( document.myForm.psw.value == "" ) {
+            alert( "Please provide New Password!" );
+            document.myForm.psw.focus() ;
+            return false;
+            }
+            if( document.myForm.cpsw.value == "" ) {
+            alert( "Please Confirm Password!" );
+            document.myForm.cpsw.focus() ;
+            return false;
+            }
+            if(pass != cpass)
+            {
+                alert( "Password mismatch" );  
+                
+                return false;
+            }
+            alert("Successfully Changed!!");
+            
+            
+   
+}
+
+
+
+        </script>
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><h3>KOHLI MEDIA LLP</h3></li>
+                <li><a href="signup.html"><h4>Register</h4></a></li>
+            </ul>
+        </header>
+        <br>
+        <br>
+        <br>
+        <h1 class="glow">Forgot Password?</h1>
+        
+        
+        <form onsubmit="return(login()); " name="myForm">
+            
+                
+                  <div class="input-container">
+                    <i class="fa fa-key icon"></i>
+                    <input class="input-field" type="password" placeholder="New Password" name="psw" id="psw">
+                  </div>
+                  <div class="input-container">
+                    <i class="fa fa-eye icon"></i>
+                    <input class="input-field" type="password" placeholder="Confirm Password" name="cpsw" id="cpsw">
+                  </div>
+                  
+                  <input type="submit" value="SUBMIT" class="btn">
+                  <img src="TH-illustration-2-removebg-preview.png" >
+                  
+        </form>
+        <br><br>
+        <footer>
+            <table>
+                <tr>
+                    <td>
+                        <b><u>About:</u></b><br>
+                Kohli Company founded in 2006 is a group <br>of businesses, that develop innovative<br> Web-Products serving people worldwide, is <br>now Kohli Media LLP - an Indian Limited<br> Liability Partnership.
+            </td>
+            <td>
+                <u>Quick Links:</u><br><br>
+                <a href="sigup.html"><b>Register</b></a><br>
+                <a href="login.html"><b>Login</b></a>
+            </td><td>
+                <b><u>Address:</u></b><br>
+                Kohli Media LLP.<br>
+               SCO 31, Sector 86<br> 
+               Mohali - 160062, India.<br><br>
+               <a href="https://www.facebook.com/KohliCompany" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/KohliCompany" class="fa fa-twitter"></a>
+
+               <a href="https://www.linkedin.com/company/kohlicompany/" class="fa fa-linkedin"></a>
+
+                  <a href="https://www.instagram.com/KohliCompany/" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-youtube"></a>
+            </td>
+        </tr>
+        </table>
+        </footer> 
+    </body>
+</html>
